@@ -109,7 +109,7 @@ void importItems(std::vector<toml::value> &root, const std::string &import_key, 
         iter++;
     }
     root.swap(newRoot);
-    writeLog(0, "Imported " + std::to_string(count) + " item(s).");
+    writeLog(0, "Imported " + std::to_string(count) + " item(s) from [" + import_key +"].");
 }
 
 void readRegexMatch(YAML::Node node, const std::string &delimiter, string_array &dest, bool scope_limit = true)
