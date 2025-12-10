@@ -18,6 +18,7 @@ namespace toml
         {
             ProxyGroupConfig conf;
             conf.Name = find<String>(v, "name");
+            conf.Hidden = find_or<bool>(v, "hidden", false);
             String type = find<String>(v, "type");
             String strategy = find_or<String>(v, "strategy", "");
             switch(hash_(type))

@@ -599,6 +599,7 @@ void proxyToClash(std::vector<Proxy> &nodes, YAML::Node &yamlnode, const ProxyGr
         string_array filtered_nodelist;
 
         singlegroup["name"] = x.Name;
+        singlegroup["hidden"] = x.Hidden;
         if (x.Type == ProxyGroupType::Smart)
             singlegroup["type"] = "url-test";
         else
