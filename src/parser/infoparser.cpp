@@ -167,12 +167,12 @@ bool getSubInfoFromNodes(const std::vector<Proxy> &nodes, const RegexMatchConfig
         }
     }
 
-    result = "upload=0; download=" + std::to_string(used) + "; total=" + std::to_string(total) + ";";
+    result = "upload=0; download=" + std::to_string(used) + "; total=" + std::to_string(total);
 
     //calculate expire time
     expire = dateStringToTimestamp(time_info);
     if(expire)
-        result += " expire=" + std::to_string(expire) + ";";
+        result += "; expire=" + std::to_string(expire);
 
     return true;
 }
@@ -188,11 +188,11 @@ bool getSubInfoFromSSD(const std::string &sub, std::string &result)
     if(used_str.empty() || total_str.empty())
         return false;
     unsigned long long used = stod(used_str) * std::pow(1024, 3), total = stod(total_str) * std::pow(1024, 3), expire;
-    result = "upload=0; download=" + std::to_string(used) + "; total=" + std::to_string(total) + ";";
+    result = "upload=0; download=" + std::to_string(used) + "; total=" + std::to_string(total);
 
     expire = dateStringToTimestamp(regReplace(expire_str, "(\\d+)-(\\d+)-(\\d+) (.*)", "$1:$2:$3:$4"));
     if(expire)
-        result += " expire=" + std::to_string(expire) + ";";
+        result += "; expire=" + std::to_string(expire);
 
     return true;
 }
