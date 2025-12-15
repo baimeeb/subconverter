@@ -1,0 +1,6 @@
+mixed-port: 7890
+
+proxies:
+  - { name: "Bandwidth: 160.22TB/200TB", type: http, server: "localhost", port: 80}
+  - { name: "Smart Access expire: 2099/12/31", type: http, server: "localhost", port: 81 }
+  
