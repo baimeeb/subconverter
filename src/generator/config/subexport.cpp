@@ -704,6 +704,9 @@ void proxyToClash(std::vector<Proxy> &nodes, YAML::Node &yamlnode, const ProxyGr
             if (!x.ClientFingerprint.empty()) {
                 singleproxy["client-fingerprint"] = x.ClientFingerprint;
             }
+            if(!x.VlessEncryption.empty()) {
+                singleproxy["encryption"] = x.VlessEncryption;
+            }
             if (!scv.is_undef())
                 singleproxy["skip-cert-verify"] = scv.get();
             break;

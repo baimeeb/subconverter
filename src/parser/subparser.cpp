@@ -1412,7 +1412,6 @@ void explodeClash(Node yamlnode, std::vector<Proxy> &nodes)
             node.TLSSecure = tls == "tls";
             // Assign new parameters to node for VLESS
             node.IpVersion = ip_version;
-            node.ClientFingerprint = client_fingerprint;
             node.EchEnable = ech_enable;
             node.EchConfig = ech_config;
             node.Certificate = certificate;
